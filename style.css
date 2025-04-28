@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+:root {
+    --page: 0;
+    --gap: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Assure que le body et html occupent toute la hauteur */
+
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Permet d'organiser les éléments en colonne */
+    min-height: 100vh; /* Assure que le body occupe au moins toute la hauteur de la fenêtre */
+    width: 100%;
+    background: linear-gradient(135deg, antiquewhite, #f5deb3, #e3cba8); /* Dégradé basé sur antiquewhite */
+    font-family: Quicksand;
+    overflow: hidden;
+}
+/* --------------------------------------------HEADER--------------------------------- */
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    background: linear-gradient(135deg, #333, #1e1e1e); /* Dégradé de fond */;
+    overflow: hidden;
+    font-size: 22px;
+    min-height: 56px;
+    height: 56px;
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    align-items: center; /* Centre verticalement les éléments */
+    justify-content: space-between; /* Espace entre le titre et les liens */
+    padding: 0 20px; /* Ajoute un espacement horizontal */
+    
+}
+
+/* Titre dans la navbar */
+.navbar-title {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+/* Liste des liens */
+.navbar ul {
+    list-style-type: none;
+    margin: 2%;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Espace entre les liens */
+}
+
+/* Liens de la navbar */
+.navbar a {
+    display: block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease; /* Transition pour la couleur */
+}
+
+.navbar a:hover {
+    color: rgb(255, 172, 63);
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(255, 172, 63);
+    transition: width 0.3s ease; /* Transition pour le soulignement */
+}
+
+.navbar a:hover::after {
+    width: 100%; /* Le soulignement s'étend sur toute la largeur */
+}
+
+/* -------------------------------------------FOOTER--------------------------------- */
+.footer {
+
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Pousse le footer vers le bas */
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer li {
+    display: inline;
+}
+
+.footer a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: rgb(255, 172, 63);
+}
+
+/* -------------------------------------------------------------CONTAINER------------------------------------------------ */
+
+
+
+.content-container {
+    --gap: calc(calc(100vw - min(80vw, 800px)) - 40px);
+    transform: translateX(
+        calc(calc(-100vw * var(--page)) + calc(var(--gap) / 2)) /* Décalage pour centrer le contenu */
+        );
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    height: 100%;;
+    gap: var(--gap); /* Espace entre les sections */
+    width: fit-content;
+    transition: transform 0.5s ease-out;
+
+}
+
+
+.oui{
+    height: 100%;
+    width: 100vw;
+    overflow: hidden;
+}
+/* Style général pour les sections */
+.section-box {
+    width: 80vw;
+    max-width: 800px;
+    height: 500px; /* Hauteur fixe pour uniformiser toutes les boxes */
+    background: linear-gradient(135deg, #1e1e1e, #333); /* Dégradé de fond */
+    color: #e0e0e0;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 3px solid #ff9800; /* Bordure avec une couleur d'accent */
+    overflow-y: auto; /* Permet de scroller si le contenu dépasse */
+}
+
+
+/* Style pour les titres des sections */
+.section-box h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ff9800;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Style pour les listes */
+.section-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-box ul li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espace entre l'icône et le texte */
+}
+
+/* Icônes dans les listes */
+.section-box ul li i {
+    color: #ff9800;
+    font-size: 20px;
+}
+
+/* Style pour les liens dans les listes */
+.section-box ul li a {
+    color: #ff9800;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.section-box ul li a:hover {
+    color: #fff;
+}
+
+.content{
+    color: #000;
+}
